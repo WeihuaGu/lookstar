@@ -11,7 +11,7 @@ class Fly extends Component {
 		this.getSence();
 		this.createLights();
 		//this.sea();
-		this.star(500);
+		this.star(5000);
 		this.control();
 		this.play();
 		this.anima();
@@ -49,10 +49,10 @@ class Fly extends Component {
 		this.scene.add(mesh);
 	}
 	star = (starnum) => {
-		var geometry = new THREE.BoxGeometry(100, 100, 100); //创建一个立方体几何对象Geometry
+		var geometry = new THREE.BoxGeometry(1000, 1000, 1000); //创建一个立方体几何对象Geometry
 		var material = new THREE.PointsMaterial({
 			color: 0xffffff,
-			size: 0.1 //点对象像素尺寸
+			size: 0.2 //点对象像素尺寸
 		}); //材质对象
 		for (let i = 0; i < starnum; i++) {
 			var points = new THREE.Points(geometry, material); //点模型对象
@@ -61,18 +61,18 @@ class Fly extends Component {
 			var k1 = Math.random() - 0.5;
 			var k2 = Math.random() - 0.5;
 			var k3 = Math.random() - 0.5;
-			points.position.set(200 * k1, 200 * k3, 200 * k2)
+			points.position.set(2000 * k1, 2000 * k3, 2000 * k2)
 		}
 	}
 	starupdate = () => {
 		this.stargroup.children.forEach((onepoint) => {
 			var flag = Math.random();
 			if (flag > 0.5) {
-				onepoint.position.x = onepoint.position.x - 0.01;
+				onepoint.position.x = onepoint.position.x - 0.008;
 				if (onepoint.position.x < -1)
 					onepoint.position.x = 200;
 			} else {
-				onepoint.position.x = onepoint.position.x + 0.01;
+				onepoint.position.x = onepoint.position.x + 0.008;
 				if (onepoint.position.x < -1)
 					onepoint.position.x = 200;
 			}
