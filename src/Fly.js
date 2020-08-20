@@ -118,7 +118,7 @@ class Fly extends Component {
 		loader.load(
 			// 资源链接
 			// 资源加载完成后的回调函数
-			'./star_linhai.mp3',
+			'star_linhai.mp3',
 			function(audioBuffer) {
 				// set the audio object buffer to the loaded object
 				oceanAmbientSound.setBuffer(audioBuffer);
